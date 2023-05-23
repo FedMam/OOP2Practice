@@ -8,7 +8,6 @@ public class NestedIteratorTests {
     public void TestEmpty() {
         var nested = new Nested<int>(new Nested<int>[] { });
         using var iterator = nested.GetEnumerator();
-        iterator.MoveNext();
         Assert.False(iterator.MoveNext());
     }
 
