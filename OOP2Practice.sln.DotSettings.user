@@ -1,6 +1,14 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=4e1e26e7_002D3be2_002D4d46_002D8b04_002Daac08ee2f80f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="NestedIteratorTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=4e1e26e7_002D3be2_002D4d46_002D8b04_002Daac08ee2f80f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="NestedIteratorTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
     &lt;TestId&gt;xUnit::B9D8D8D0-9AF9-4692-9574-8E1FA208C21C::net6.0::OOP2PracticeTests.NestedIteratorTests&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::B9D8D8D0-9AF9-4692-9574-8E1FA208C21C::net6.0::OOP2PracticeTests.MultiEnumeratorTests&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::B9D8D8D0-9AF9-4692-9574-8E1FA208C21C::net6.0::OOP2PracticeTests.PangramTests&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::B9D8D8D0-9AF9-4692-9574-8E1FA208C21C::net6.0::OOP2PracticeTests.PalindromesTest&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7b2be949_002D6af0_002D4511_002D9ccb_002Db84be79218bd/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="PalindromesTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::B9D8D8D0-9AF9-4692-9574-8E1FA208C21C::net6.0::OOP2PracticeTests.PalindromesTest&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
