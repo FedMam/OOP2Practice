@@ -1,12 +1,26 @@
+using System.Globalization;
+
 namespace OOP2Practice; 
 
 public static class IsPalindromeExtension {
-    public static bool IsPalindrome(this string str) {
-        string upper = str.ToUpper(System.Threading.Thread.CurrentThread.CurrentCulture);
-        string adjusted = string.Join("", upper.Where(Char.IsLetter));
-        if (adjusted.Length == 0)
-            return true;
-        return Enumerable.Range(0, adjusted.Length / 2 + 1)
-            .All(i => adjusted[i] == adjusted[adjusted.Length - 1 - i]);
+    public static bool IsPalindrome(this string str,
+        CultureInfo culture) {
+        int l = 0, r = str.Length - 1;
+        while (l < r) {
+            while (l < str.Length && !Char.IsLetter(str[l]))
+                l++;
+            while (r >= 0 && !Char.IsLetter(str[r]))
+                r--;
+            if (r < 0 || l >= str.Length)
+                return true;
+            if (Char.ToUpper(str[l], culture) != Char.ToUpper(str[r], culture))
+                return false;
+            l++;
+            r--;
+        }
+        return true;
     }
+
+    public static bool IsPalindrome(this string str) =>
+        IsPalindrome(str, Thread.CurrentThread.CurrentCulture);
 }

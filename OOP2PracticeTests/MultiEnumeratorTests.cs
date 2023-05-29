@@ -73,6 +73,45 @@ public class MultiEnumeratorTests {
     }
 
     [Fact]
+    public void TestMEInME() {
+        using var iterator = new MultiEnumerator<int>(
+            new IEnumerator<int>[] {
+                new MultiEnumerator<int>(new IEnumerator<int>[] {
+                    new int[] { 1, 2, 3 }.AsEnumerable().GetEnumerator(),
+                    new int[] { }.AsEnumerable().GetEnumerator(),
+                    new int[] { 4, 5 }.AsEnumerable().GetEnumerator(),
+                    new int[] { }.AsEnumerable().GetEnumerator()
+                }.AsEnumerable().GetEnumerator()),
+                new MultiEnumerator<int>(new IEnumerator<int>[] {
+                    new int[] { 6, 7 }.AsEnumerable().GetEnumerator(),
+                    new int[] { 8, 9 }.AsEnumerable().GetEnumerator(),
+                    new int[] { }.AsEnumerable().GetEnumerator(),
+                    new int[] { }.AsEnumerable().GetEnumerator()
+                }.AsEnumerable().GetEnumerator()),
+                new MultiEnumerator<int>(new IEnumerator<int>[] {
+                    
+                }.AsEnumerable().GetEnumerator()),
+                new MultiEnumerator<int>(new IEnumerator<int>[] {
+                    
+                }.AsEnumerable().GetEnumerator()),
+                new MultiEnumerator<int>(new IEnumerator<int>[] {
+                    new int[] { }.AsEnumerable().GetEnumerator(),
+                    new int[] { }.AsEnumerable().GetEnumerator(),
+                    new int[] { }.AsEnumerable().GetEnumerator(),
+                    new int[] { 10 }.AsEnumerable().GetEnumerator()
+                }.AsEnumerable().GetEnumerator()),
+                new MultiEnumerator<int>(new IEnumerator<int>[] {
+                    
+                }.AsEnumerable().GetEnumerator()),
+            }.AsEnumerable().GetEnumerator());
+        iterator.MoveNext();
+        for (int i = 1; i <= 10; i++) {
+            Assert.Equal(i, iterator.Current);
+            Assert.True(iterator.MoveNext() ^ (i == 10));
+        }
+    }
+
+    [Fact]
     public void Test5Empty() {
         using var iterator = new MultiEnumerator<int>(
             new IEnumerator<int>[] {

@@ -38,11 +38,7 @@ public class PalindromesTest {
 
     [Fact]
     public void TestSpecificCulture() {
-        var currentCulture = Thread.CurrentThread.CurrentCulture;
-        Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("en-US");
-        Assert.False("İıIi".IsPalindrome());
-        Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("tr-TR");
-        Assert.True("İıIi".IsPalindrome());
-        Thread.CurrentThread.CurrentCulture = currentCulture;
+        Assert.False("İıIi".IsPalindrome(CultureInfo.CreateSpecificCulture("en-US")));
+        Assert.True("İıIi".IsPalindrome(CultureInfo.CreateSpecificCulture("tr-TR")));
     }
 }
